@@ -356,6 +356,9 @@ def _si_fmt(v, _pos=None):
     return f"{int(v)}"
 
 
+si_fmt = _si_fmt  # public alias; _si_fmt retained for backward compat
+
+
 def is_narrow_figure(fig, threshold=5.0):
     """True when the figure is narrower than ``threshold`` inches.
 
@@ -412,6 +415,6 @@ def panel_label(ax, letter, x=-0.10, y=1.02):
         x, y, letter,
         transform=ax.transAxes,
         ha="left", va="bottom",
-        fontsize=9.0, fontweight="normal",
+        fontsize=9.0, fontweight="bold",
         color=PAL["dark"],
     )

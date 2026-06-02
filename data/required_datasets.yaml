@@ -6,8 +6,8 @@
 #
 # NOTE: the large `expanded-tissuenet.zarr` archive is NOT in this manifest --
 # it is the separate released large-data artifact. The archive-reading
-# notebooks (calibration, fov_exemplars, data_statistics) require it; point at
-# it via the DATA_DIR env var rather than these S3 files.
+# notebooks (fov_exemplars, data_statistics) require it; point at it via the
+# DATA_DIR env var rather than these S3 files.
 
 # Prediction CSVs, marker-positivity, and SSL inputs (output/)
 output/baseline_cellsighter_test_prediction.csv: 76a14fb3a0eb92a9b9e007ff27816389

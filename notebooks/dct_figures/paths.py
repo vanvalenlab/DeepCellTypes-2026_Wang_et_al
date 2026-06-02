@@ -1,9 +1,9 @@
 """Resolve data + archive locations for the figure notebooks.
 
 DATA_ROOT defaults to ``<repo>/data`` (where the derived inputs are copied).
-The zarr archives default to the local research-box paths; public users
-override via the DATA_DIR / GOLD_ZARR env vars after downloading the
-release archive.
+The ``expanded-tissuenet.zarr`` archive defaults to the local default path;
+public users override via the DATA_DIR env var after downloading the release
+archive.
 """
 from __future__ import annotations
 
@@ -15,11 +15,9 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_ROOT = Path(os.environ.get("DCT_DATA_ROOT", REPO_ROOT / "data"))
 
 OUTPUT = DATA_ROOT / "output"
-EMBEDDINGS = DATA_ROOT / "embeddings"
 SPLITS = DATA_ROOT / "splits"
-CONFIG = DATA_ROOT / "config"
 FIGURES_DATA = DATA_ROOT / "figures_data"
-GOLD_GT = DATA_ROOT / "gold_standard" / "gold_standard_labelled" / "gold_standard_groundtruth.csv"
+
 
 def _resolve_zarr(env_var: str, default: str) -> Path:
     """Honor ``$env_var`` only when it points at a real zarr archive.
@@ -39,7 +37,6 @@ def _resolve_zarr(env_var: str, default: str) -> Path:
 
 
 EXPANDED_TISSUENET_ZARR = _resolve_zarr("DATA_DIR", str(DATA_ROOT / "expanded-tissuenet.zarr"))
-GOLD_ZARR = _resolve_zarr("GOLD_ZARR", str(DATA_ROOT / "gold_standard.zarr"))
 
 
 def need(p: Path) -> Path:
@@ -48,6 +45,6 @@ def need(p: Path) -> Path:
         raise FileNotFoundError(
             f"Required input not found: {p}\n"
             "Run the data-copy step (see notebooks/README) or set DCT_DATA_ROOT / "
-            "DATA_DIR / GOLD_ZARR."
+            "DATA_DIR."
         )
     return Path(p)

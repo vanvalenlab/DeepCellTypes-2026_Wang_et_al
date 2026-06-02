@@ -13,7 +13,7 @@ outputs.
 | `calibration.ipynb` | Abstention / calibration analysis (reliability diagram and confidence-by-correctness). |
 | `latent.ipynb` | Latent-space visualization (NCA / t-SNE of [CLS]-token embeddings, colored by cell type and by imaging modality). |
 | `marker_positivity.ipynb` | Marker-positivity benchmarks: the headline comparison vs Nimbus, a per-marker F1 waterfall, FiLM decision curves, and the learned-threshold histogram. |
-| `ssl.ipynb` | Self-supervised pretraining ablations: Frozen-CLS vs Pretrain + Fine-tune metric bars and the masked-marker pretext-task diagnostic. |
+| `ssl.ipynb` | Self-supervised pretraining ablations: From Scratch vs Pretrain + Fine-tune metric bars and the masked-marker pretext-task diagnostic. |
 | `fov_exemplars.ipynb` | Field-of-view exemplar montages rendered from the expanded-TissueNet zarr. |
 | `data_statistics.ipynb` | Dataset composition statistics (counts by cell type / modality / tissue, channel-intensity stats, FOV split sizes), computed from the zarr archive. |
 | `few_shot.ipynb` | Few-shot adaptation results on the Keren held-out dataset. |

@@ -36,10 +36,17 @@ Shared styling, color maps, and scoring helpers imported by every notebook:
 
 ## Data
 
+Two small config files are committed in the repo and arrive with a clone:
+[`../data/lineage_mapping.yaml`](../data/lineage_mapping.yaml) (cell-type →
+lineage map used by several notebooks) and
+[`../data/required_datasets.yaml`](../data/required_datasets.yaml) (the
+download manifest below). **Everything else under `data/` is gitignored** and
+must be downloaded as described next.
+
 ### Derived inputs (S3)
 
-The small/medium derived inputs (CSV / NPZ / JSON) live under `../data/`,
-which is **gitignored**. Download them from the public S3 bucket
+The small/medium derived inputs (CSV / NPZ / JSON) the notebooks read are
+**not** in git. Download them from the public S3 bucket
 `deepcelltypes-2024-wang-et-al` into `data/`, preserving the relative paths.
 The full list with md5 checksums is in
 [`../data/required_datasets.yaml`](../data/required_datasets.yaml); they land
@@ -72,5 +79,19 @@ Execute in place with embedded outputs:
 jupyter nbconvert --to notebook --execute --inplace notebooks/<name>.ipynb
 ```
 
-Install `requirements.txt` (which includes zarr v3) and run with any Python 3
-kernel.
+Install `requirements.txt` (which includes zarr v3 and Jupyter) and run with
+any Python 3 kernel.
+
+### Sanity-check your data download
+
+After downloading the derived inputs, verify they reproduce the paper's
+headline cell-type numbers (macro / weighted accuracy and F1) with the
+bundled self-test:
+
+```bash
+python -m notebooks.dct_figures._selftest
+```
+
+It scores `data/output/deepcelltypes_test_prediction.csv` and checks the four
+headline metrics against the published values within ±0.1; it prints
+`SELFTEST PASS` on success.

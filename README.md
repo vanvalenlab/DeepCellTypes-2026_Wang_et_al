@@ -33,7 +33,7 @@ three components:
   panel size and order) and a learnable `[CLS]` token summarizing the cell.
 
 Additional training strategies improve cross-platform generalization: a focal
-cross-entropy cell-type head, a FiLM-conditioned marker-positivity head, a
+cross-entropy classification loss, a FiLM-conditioned marker-positivity head, a
 mean-intensity `[CLS]` residual that reintroduces the quantitative gating cue,
 and a gradient-reversal modality head that pushes the encoder to unlearn
 platform-specific features.
@@ -49,7 +49,7 @@ comprises:
 - **7** imaging platforms (IMC, CODEX, MIBI, IBEX, MACSima/MICS, Cell DIVE, and
   CycIF), with most data from the first three;
 - **51** specific cell types organized into **8** lineages, and 17 tissue types
-  in the labeled subset (21 across the broader archive);
+  in the labeled subset;
 - **278** standardized protein markers (≈ 28.5 markers per FOV).
 
 ## Headline results
@@ -66,7 +66,7 @@ split so no test cell is ever seen in training):
 Each marker-positivity model is strongest on its own native distribution (the
 Pan-Multiplex Gold Standard is in-distribution for Nimbus and out-of-distribution
 for DeepCell Types). Masked-marker self-supervised pretraining yields modest
-additional gains (cell-type +0.8, marker-positivity +3.9 F1 points). See the
+additional gains (cell-type +0.7, marker-positivity +3.9 F1 points). See the
 paper's Materials and Methods for the full evaluation protocol (macro F1 primary
 metric, hierarchical-collapsed scoring, minimum-support floor, per-marker
 thresholds).

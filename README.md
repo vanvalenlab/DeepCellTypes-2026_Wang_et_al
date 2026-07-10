@@ -10,8 +10,7 @@ Supplementary Figures 1–9) from Wang et al., *Generalized cell phenotyping for
 spatial proteomics with language-informed vision models*. It contains a set of
 per-theme notebooks covering classification, latent-space visualization, marker
 positivity, self-supervised pretraining, FOV exemplars, dataset statistics, and
-few-shot adaptation, plus a legacy notebook for the external-dataset predictions
-that appeared in earlier preprint versions but are not in the current draft. See
+few-shot adaptation. See
 [`notebooks/README.md`](notebooks/README.md) for the full notebook list, the
 shared `dct_figures` helper package, the data-download step, and how to run each
 notebook.

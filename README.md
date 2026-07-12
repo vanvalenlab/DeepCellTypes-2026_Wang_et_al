@@ -1,5 +1,7 @@
 # Generalized cell phenotyping for spatial proteomics with language-informed vision models
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21325983.svg)](https://doi.org/10.5281/zenodo.21325983)
+
 > **License notice.** This project is distributed under a *Modified Apache
 > License, Version 2.0* with non-commercial / academic-only carve-outs (see
 > the [LICENSE](LICENSE) file for the full text). For any other use,

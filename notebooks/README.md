@@ -9,14 +9,13 @@ outputs.
 
 | Notebook | What it produces |
 | --- | --- |
-| `classification.ipynb` | Cell-type classification results: confusion matrix, per-cell-type / per-modality / per-tissue F1, and a cross-method benchmark (our model vs. XGBoost / MAPS / static baselines). |
+| `classification.ipynb` | Cell-type classification results: confusion matrix, per-cell-type / per-modality / per-tissue F1, and a cross-method benchmark (our model vs. XGBoost / MAPS / CellSighter). |
 | `latent.ipynb` | Latent-space visualization (NCA / t-SNE of [CLS]-token embeddings, colored by cell type and by imaging modality). |
 | `marker_positivity.ipynb` | Marker-positivity benchmarks: the headline comparison vs Nimbus, a per-marker F1 waterfall, FiLM decision curves, and the learned-threshold histogram. |
 | `ssl.ipynb` | Self-supervised pretraining ablations: From Scratch vs Pretrain + Fine-tune metric bars and the masked-marker pretext-task diagnostic. |
 | `fov_exemplars.ipynb` | Field-of-view exemplar montages rendered from the expanded-TissueNet zarr. |
 | `data_statistics.ipynb` | Dataset composition statistics (counts by cell type / modality / tissue, channel-intensity stats, FOV split sizes), computed from the zarr archive. |
 | `few_shot.ipynb` | Few-shot adaptation results on the Keren held-out dataset. |
-| `unannotated.ipynb` | **Legacy** — cell-type predictions on unannotated external datasets: XGBoost / CellSighter / MAPS / DeepCell Types spatial maps + predicted composition, rendered from saved per-FOV plot bundles. These were Supplementary Figures 10–12 in earlier preprint versions; the current draft removes them (the out-of-distribution / new-dataset story is now the `preproc-adapt` Supplementary Methods section), so this notebook is retained for reference only and is not a current publication figure. |
 
 ## Helper package: `dct_figures`
 
